@@ -19,7 +19,6 @@
   }
 
   var ampmRegex = /(\d+?\s*?)([ap]\.?m\.?)/gi
-  var placeholder = "__PLACEHOLDER__";
 
   function handleText(textNode) {
     if (ampmRegex.test(textNode.nodeValue)) {
@@ -92,5 +91,7 @@
     bodyObserver.observe(document.body, observerConfig);
   }
 
+  console.log("SETTING UOP");
+
   setupAmpm();
-});
+})();
