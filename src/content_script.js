@@ -30,11 +30,11 @@
       tokens.forEach(function(token) {
         var node;
 
-        if (token === "__am__") {
+        if (token.match(/__am__/i)) {
           node = document.createElement('img');
           node.setAttribute('src', am);
           node.setAttribute('style', 'position: relative; top: 2px');
-        } else if (token === "__pm__") {
+        } else if (token.match(/__pm__/i)) {
           node = document.createElement('img');
           node.setAttribute('src', pm);
           node.setAttribute('style', 'position: relative; top: 7px');
@@ -90,8 +90,6 @@
     var bodyObserver = new MutationObserver(observerCallback);
     bodyObserver.observe(document.body, observerConfig);
   }
-
-  console.log("SETTING UOP");
 
   setupAmpm();
 })();
